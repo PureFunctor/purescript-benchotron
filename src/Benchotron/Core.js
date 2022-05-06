@@ -1,7 +1,7 @@
 /* global exports */
 "use strict";
 
-exports.handleBenchmarkException = function (name) {
+export function handleBenchmarkException(name) {
   return function (size) {
     return function (innerAction) {
       return function () {
@@ -16,4 +16,4 @@ exports.handleBenchmarkException = function (name) {
       };
     };
   };
-};
+}
