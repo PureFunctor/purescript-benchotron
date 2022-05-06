@@ -1,5 +1,6 @@
 {
   "private": "true",
+  "type": "module",
   "dependencies": {
     "benchmark": "^2.1.0",
     "microtime": "^3.0.0",
@@ -8,6 +9,6 @@
   "scripts": {
     "postinstall": "bower install",
     "build": "pulp build && pulp docs",
-    "test": "mkdir -p tmp && pulp build -I example -O --to tmp/main.js && (echo '*' | node tmp/main.js)"
+    "test": "pulp build -I example && (echo '*' | node example/index.js)"
   }
 }
