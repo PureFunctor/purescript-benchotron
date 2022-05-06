@@ -2,7 +2,7 @@
 /* global require */
 "use strict";
 
-export var benchmarkJS = require('benchmark');
+import benchmarkJS from "benchmark";
 
 export function monkeyPatchBenchmark(b) {
   return function () {
@@ -22,3 +22,7 @@ export function runBenchmarkImpl(Benchmark) {
     };
   };
 }
+
+export {
+    benchmarkJS,
+};
