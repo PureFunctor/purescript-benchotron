@@ -2,15 +2,15 @@
 /* global require */
 "use strict";
 
-exports.benchmarkJS = require('benchmark');
+export var benchmarkJS = require('benchmark');
 
-exports.monkeyPatchBenchmark = function (b) {
+export function monkeyPatchBenchmark(b) {
   return function () {
     b.support.decompilation = false;
   };
-};
+}
 
-exports.runBenchmarkImpl = function (Benchmark) {
+export function runBenchmarkImpl(Benchmark) {
   return function (fn) {
     return function () {
       var b = new Benchmark(fn);
@@ -21,4 +21,4 @@ exports.runBenchmarkImpl = function (Benchmark) {
       return b.stats;
     };
   };
-};
+}
